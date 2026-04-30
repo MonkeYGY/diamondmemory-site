@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', function() {
   };
 
   const COMMUNITY = {
-    douyinUrl: '',
+    douyinUrl: 'https://www.douyin.com/user/MS4wLjABAAAAqzQPR0Ee1VN4BZhkQ615g2FTzBQmkCp-pYQjpearNqzG0_tmF-hlX2LAgCQ6mFw7?from_tab_name=main',
     groupHelpUrl: ''
   };
 
@@ -92,13 +92,15 @@ window.addEventListener('DOMContentLoaded', function() {
 
   const douyinLink = document.getElementById('douyin-link');
   if (douyinLink) {
+    if (COMMUNITY.douyinUrl) {
+      douyinLink.href = COMMUNITY.douyinUrl;
+    }
     douyinLink.addEventListener('click', function(e) {
       if (!COMMUNITY.douyinUrl) {
         e.preventDefault();
         alert('抖音链接尚未配置。');
         return;
       }
-      douyinLink.href = COMMUNITY.douyinUrl;
     });
   }
 
@@ -107,7 +109,7 @@ window.addEventListener('DOMContentLoaded', function() {
     groupLink.addEventListener('click', function(e) {
       if (!COMMUNITY.groupHelpUrl) {
         e.preventDefault();
-        alert('请在抖音私信发送关键词“进群”，获取交流群入口。');
+        alert('请先进入抖音主页，在主页内点击群聊入口加入交流群。');
         return;
       }
       groupLink.href = COMMUNITY.groupHelpUrl;
