@@ -213,6 +213,20 @@ body {
   flex-wrap: wrap;
 }
 
+.download-buttons .btn {
+  justify-content: center;
+}
+
+.download-buttons .btn-secondary {
+  color: var(--dark);
+  border-color: #e2e8f0;
+}
+
+.download-buttons .btn-secondary:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
 /* ==================== Navigation ==================== */
 .navbar {
   position: fixed;

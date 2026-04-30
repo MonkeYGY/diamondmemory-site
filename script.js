@@ -12,7 +12,8 @@ function closeMobileMenu() {
 // Check login state on page load
 window.addEventListener('DOMContentLoaded', function() {
   const DOWNLOADS = {
-    mac: '',
+    macArm64: 'https://github.com/MonkeYGY/diamondmemory-setup/releases/download/V1.0.0/-1.0.0-mac-arm64.dmg',
+    macX64: 'https://github.com/MonkeYGY/diamondmemory-setup/releases/download/V1.0.0/-1.0.0-mac-x64.dmg',
     win: ''
   };
 
@@ -28,11 +29,17 @@ window.addEventListener('DOMContentLoaded', function() {
   // Download buttons
   document.getElementById('mac-download').addEventListener('click', function(e) {
     e.preventDefault();
-    if (!DOWNLOADS.mac) {
-      alert('macOS 下载链接尚未配置，请稍后再试。');
+    const modal = document.getElementById('mac-download-modal');
+    if (!modal) {
+      if (!DOWNLOADS.macArm64) {
+        alert('macOS 下载链接尚未配置，请稍后再试。');
+        return;
+      }
+      window.open(DOWNLOADS.macArm64, '_blank', 'noopener,noreferrer');
       return;
     }
-    window.open(DOWNLOADS.mac, '_blank', 'noopener,noreferrer');
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
   });
   
   document.getElementById('win-download').addEventListener('click', function(e) {
@@ -43,6 +50,45 @@ window.addEventListener('DOMContentLoaded', function() {
     }
     window.open(DOWNLOADS.win, '_blank', 'noopener,noreferrer');
   });
+
+  const macModal = document.getElementById('mac-download-modal');
+  const macModalClose = document.getElementById('mac-download-modal-close');
+  const macArm64Btn = document.getElementById('mac-download-arm64');
+  const macX64Btn = document.getElementById('mac-download-x64');
+
+  function closeMacModal() {
+    if (!macModal) return;
+    macModal.classList.remove('active');
+    macModal.setAttribute('aria-hidden', 'true');
+  }
+
+  if (macArm64Btn) {
+    macArm64Btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (!DOWNLOADS.macArm64) return;
+      window.open(DOWNLOADS.macArm64, '_blank', 'noopener,noreferrer');
+      closeMacModal();
+    });
+  }
+
+  if (macX64Btn) {
+    macX64Btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (!DOWNLOADS.macX64) return;
+      window.open(DOWNLOADS.macX64, '_blank', 'noopener,noreferrer');
+      closeMacModal();
+    });
+  }
+
+  if (macModalClose) {
+    macModalClose.addEventListener('click', closeMacModal);
+  }
+
+  if (macModal) {
+    macModal.addEventListener('click', function(e) {
+      if (e.target === macModal) closeMacModal();
+    });
+  }
 
   const douyinLink = document.getElementById('douyin-link');
   if (douyinLink) {
