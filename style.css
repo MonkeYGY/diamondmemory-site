@@ -373,15 +373,15 @@ body {
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: 4.25rem;
+  font-size: 5.2rem;
   font-weight: 900;
-  line-height: 1.2;
+  line-height: 1.15;
   margin-bottom: 1.25rem;
 }
 
 .title-line {
   display: block;
-  font-size: 0.5em;
+  font-size: 0.46em;
   font-weight: 400;
   color: var(--gray);
 }
@@ -394,7 +394,7 @@ body {
 }
 
 .hero-subtitle {
-  font-size: 1.4rem;
+  font-size: 1.65rem;
   color: var(--gray);
   margin-bottom: 2rem;
   max-width: 720px;
@@ -415,7 +415,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 0.55rem 1.1rem;
   border-radius: 9999px;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   color: var(--light);
 }
 
@@ -435,7 +435,7 @@ body {
   display: inline-block;
   border: none;
   cursor: pointer;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
 }
 
 .btn-primary {
@@ -472,14 +472,14 @@ body {
 
 .stat-number {
   display: block;
-  font-size: 2.9rem;
+  font-size: 3.35rem;
   font-weight: 700;
   font-family: var(--font-display);
   color: var(--accent);
 }
 
 .stat-label {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   color: var(--gray);
 }
 
@@ -1044,7 +1044,7 @@ body {
   }
   
   .hero-title {
-    font-size: 2.8rem;
+    font-size: 3.2rem;
   }
   
   .hero-stats {
