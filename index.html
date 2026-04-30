@@ -207,20 +207,39 @@
       <p class="section-subtitle">直观的界面设计，强大的功能体验</p>
       <div class="screenshots-grid">
         <div class="screenshot-card">
-          <div class="screenshot-placeholder">仪表盘界面</div>
+          <div class="screenshot-media" data-lightbox-src="assets/screenshots/01-dashboard.png" data-lightbox-alt="仪表盘页面">
+            <img class="screenshot-image" src="assets/screenshots/01-dashboard.png" alt="仪表盘页面" loading="lazy">
+            <div class="screenshot-fallback">仪表盘页面</div>
+          </div>
           <p>总览记忆状态与系统信息</p>
         </div>
         <div class="screenshot-card">
-          <div class="screenshot-placeholder">记忆管理界面</div>
+          <div class="screenshot-media" data-lightbox-src="assets/screenshots/02-memory.png" data-lightbox-alt="记忆管理页面">
+            <img class="screenshot-image" src="assets/screenshots/02-memory.png" alt="记忆管理页面" loading="lazy">
+            <div class="screenshot-fallback">记忆管理页面</div>
+          </div>
           <p>查看、编辑和管理各层级记忆</p>
         </div>
         <div class="screenshot-card">
-          <div class="screenshot-placeholder">知识中心界面</div>
+          <div class="screenshot-media" data-lightbox-src="assets/screenshots/03-chat.png" data-lightbox-alt="AI 对话页面">
+            <img class="screenshot-image" src="assets/screenshots/03-chat.png" alt="AI 对话页面" loading="lazy">
+            <div class="screenshot-fallback">AI 对话页面</div>
+          </div>
+          <p>带记忆增强的智能对话体验</p>
+        </div>
+        <div class="screenshot-card">
+          <div class="screenshot-media" data-lightbox-src="assets/screenshots/04-knowledge.png" data-lightbox-alt="知识库页面">
+            <img class="screenshot-image" src="assets/screenshots/04-knowledge.png" alt="知识库页面" loading="lazy">
+            <div class="screenshot-fallback">知识库页面</div>
+          </div>
           <p>知识库导入与管理</p>
         </div>
         <div class="screenshot-card">
-          <div class="screenshot-placeholder">问答中心界面</div>
-          <p>基于记忆系统智能问答</p>
+          <div class="screenshot-media" data-lightbox-src="assets/screenshots/05-graph.png" data-lightbox-alt="知识图谱页面">
+            <img class="screenshot-image" src="assets/screenshots/05-graph.png" alt="知识图谱页面" loading="lazy">
+            <div class="screenshot-fallback">知识图谱页面</div>
+          </div>
+          <p>知识关联网络可视化</p>
         </div>
       </div>
     </div>
@@ -300,7 +319,6 @@
         </div>
         <div class="footer-info">
           <h4>技术支持</h4>
-          <p>邮箱：support@diamondmemory.cn</p>
           <p>版本：v0.3</p>
         </div>
       </div>
@@ -311,6 +329,11 @@
       </div>
     </div>
   </footer>
+
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button id="lightbox-close" class="lightbox-close" aria-label="关闭">×</button>
+    <img id="lightbox-img" class="lightbox-img" alt="">
+  </div>
 
   <script src="script.js"></script>
 </body>

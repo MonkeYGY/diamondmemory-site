@@ -21,6 +21,10 @@ window.addEventListener('DOMContentLoaded', function() {
     groupHelpUrl: ''
   };
 
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxClose = document.getElementById('lightbox-close');
+
   // Download buttons
   document.getElementById('mac-download').addEventListener('click', function(e) {
     e.preventDefault();
@@ -64,6 +68,49 @@ window.addEventListener('DOMContentLoaded', function() {
     });
   }
   
+  document.querySelectorAll('.screenshot-media').forEach(container => {
+    const img = container.querySelector('img');
+    if (img) {
+      img.addEventListener('error', function() {
+        container.classList.add('is-missing');
+      });
+      if (!img.complete || img.naturalWidth === 0) {
+        img.loading = 'lazy';
+      }
+    }
+
+    container.addEventListener('click', function() {
+      const src = container.getAttribute('data-lightbox-src') || '';
+      const alt = container.getAttribute('data-lightbox-alt') || '';
+      if (!src || !lightbox || !lightboxImg) return;
+      lightboxImg.src = src;
+      lightboxImg.alt = alt;
+      lightbox.classList.add('active');
+      lightbox.setAttribute('aria-hidden', 'false');
+    });
+  });
+
+  function closeLightbox() {
+    if (!lightbox || !lightboxImg) return;
+    lightbox.classList.remove('active');
+    lightbox.setAttribute('aria-hidden', 'true');
+    lightboxImg.src = '';
+  }
+
+  if (lightboxClose) {
+    lightboxClose.addEventListener('click', closeLightbox);
+  }
+
+  if (lightbox) {
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+  }
+
+  window.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+
   // Feature cards click to show details
   document.querySelectorAll('.feature-card').forEach(card => {
     card.addEventListener('click', function() {
