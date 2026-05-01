@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', function() {
   const DOWNLOADS = {
     macArm64: 'https://github.com/MonkeYGY/diamondmemory-setup/releases/download/V1.0.0/-1.0.0-mac-arm64.dmg',
     macX64: 'https://github.com/MonkeYGY/diamondmemory-setup/releases/download/V1.0.0/-1.0.0-mac-x64.dmg',
-    win: ''
+    win: 'https://github.com/MonkeYGY/diamondmemory-setup/releases/download/V1.0.0/-1.0.0-setup.exe'
   };
 
   const COMMUNITY = {
